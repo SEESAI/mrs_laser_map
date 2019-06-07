@@ -1,12 +1,12 @@
 //rqt plugin for tuning parameters
 //Author: Sebastian Schüller
-
+#ifndef Q_MOC_RUN
 #include <ros/ros.h>
 #include <dynamic_reconfigure/server.h>
 #include <rqt_gui_cpp/plugin.h>
 #include <sensor_msgs/Joy.h>
 #include <ui_parametertuner.h>
-
+#endif
 #include <config_server/ParameterList.h>
 #include <QMutex>
 

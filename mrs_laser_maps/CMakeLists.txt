@@ -18,6 +18,8 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(PCL REQUIRED)
 
+find_package(TBB REQUIRED)
+
 catkin_package(
    INCLUDE_DIRS include
    LIBRARIES ${PROJECT_NAME}
@@ -27,6 +29,7 @@ include_directories(
   include
   ${catkin_INCLUDE_DIRS}
   ${PCL_INCLUDE_DIRS}
+  ${TBB_INCLUDE_DIRS}
 )
 
 add_definitions(${PCL_DEFINITIONS})

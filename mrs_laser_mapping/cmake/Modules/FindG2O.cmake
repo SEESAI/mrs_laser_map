@@ -3,12 +3,13 @@
 FIND_PATH(G2O_INCLUDE_DIR g2o/core/base_vertex.h
   ${G2O_ROOT}/include
   $ENV{G2O_ROOT}/include
+  $ENV{G2O_ROOT}
   /usr/local/include
   /usr/include
   /opt/local/include
-  /opt/ros/indigo/include
   /sw/local/include
   /sw/include
+  /opt/ros/$ENV{ROS_DISTRO}/include
   NO_DEFAULT_PATH
   )
 
@@ -25,6 +26,7 @@ MACRO(FIND_G2O_LIBRARY MYLIBRARY MYLIBRARYNAME)
     ${G2O_ROOT}/lib
     $ENV{G2O_ROOT}/lib/Debug
     $ENV{G2O_ROOT}/lib
+    /opt/ros/$ENV{ROS_DISTRO}/lib
     NO_DEFAULT_PATH
     )
 
@@ -49,6 +51,7 @@ MACRO(FIND_G2O_LIBRARY MYLIBRARY MYLIBRARYNAME)
     ${G2O_ROOT}/lib
     $ENV{G2O_ROOT}/lib/Release
     $ENV{G2O_ROOT}/lib
+    /opt/ros/$ENV{ROS_DISTRO}/lib
     NO_DEFAULT_PATH
     )
 
@@ -99,6 +102,7 @@ FIND_G2O_LIBRARY(G2O_TYPES_SCLAM2D types_sclam2d)
 FIND_G2O_LIBRARY(G2O_TYPES_SIM3 types_sim3)
 FIND_G2O_LIBRARY(G2O_TYPES_SLAM2D types_slam2d)
 FIND_G2O_LIBRARY(G2O_TYPES_SLAM3D types_slam3d)
+FIND_G2O_LIBRARY(G2O_TYPES_SLAM3D_ADDONS types_slam3d_addons)
 
 # G2O solvers declared found if we found at least one solver
 SET(G2O_SOLVERS_FOUND "NO")
